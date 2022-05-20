@@ -1,5 +1,7 @@
-package com.testcase.Report;
+package com.testcase.Report.Controller;
 
+import com.testcase.Report.Entity.Report;
+import com.testcase.Report.Service.ReportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

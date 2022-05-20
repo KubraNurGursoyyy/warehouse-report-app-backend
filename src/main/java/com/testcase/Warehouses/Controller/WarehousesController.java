@@ -1,5 +1,7 @@
-package com.testcase.Warehouses;
+package com.testcase.Warehouses.Controller;
 
+import com.testcase.Warehouses.Entity.Warehouses;
+import com.testcase.Warehouses.Repository.WarehousesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

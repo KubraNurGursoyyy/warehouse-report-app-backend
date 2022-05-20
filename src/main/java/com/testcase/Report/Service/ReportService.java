@@ -1,9 +1,10 @@
-package com.testcase.Report;
+package com.testcase.Report.Service;
 
 import com.testcase.Products.Entity.Products;
 import com.testcase.Products.Repository.ProductsRepository;
-import com.testcase.Warehouses.Warehouses;
-import com.testcase.Warehouses.WarehousesRepository;
+import com.testcase.Report.Entity.Report;
+import com.testcase.Warehouses.Entity.Warehouses;
+import com.testcase.Warehouses.Repository.WarehousesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,8 +40,6 @@ public class ReportService {
                     report.setTotalProductValueBySalePrice((int) (report.getTotalProductValueBySalePrice() + (product.getSalePrice() * product.getQuantity())));
                     report.setTotalProductValueByPurchasePriceWithVAT((int) (report.getTotalProductValueByPurchasePriceWithVAT() + (product.getPurchasePriceWithVat() * product.getQuantity())));
                     report.setTotalProductValueBySalePriceWithVAT((int) (report.getTotalProductValueBySalePriceWithVAT() + (product.getSalePriceWithVat() * product.getQuantity())));
-                    //bu şekilde güncelleyecek mi listeyi kontrol etmek lazım
-
                 }
             }
         }
