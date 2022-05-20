@@ -1,4 +1,4 @@
-package com.testcase.Products;
+package com.testcase.Products.Entity;
 
 import lombok.Data;
 

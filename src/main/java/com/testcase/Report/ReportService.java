@@ -1,7 +1,7 @@
 package com.testcase.Report;
 
-import com.testcase.Products.Products;
-import com.testcase.Products.ProductsRepository;
+import com.testcase.Products.Entity.Products;
+import com.testcase.Products.Repository.ProductsRepository;
 import com.testcase.Warehouses.Warehouses;
 import com.testcase.Warehouses.WarehousesRepository;
 import lombok.RequiredArgsConstructor;

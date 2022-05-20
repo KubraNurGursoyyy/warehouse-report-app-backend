@@ -1,7 +1,7 @@
 package com.testcase.Products.Controller;
 
-import com.testcase.Products.Products;
-import com.testcase.Products.ProductsRepository;
+import com.testcase.Products.Entity.Products;
+import com.testcase.Products.Repository.ProductsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
