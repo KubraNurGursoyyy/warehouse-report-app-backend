@@ -1,0 +1,8 @@
+{
+  "name": "backend-jr-testcase",
+"buildpacks": [
+    {
+      "url": "heroku/gradle"
+    }
+  ]
+}
