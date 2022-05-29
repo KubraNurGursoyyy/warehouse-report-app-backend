@@ -20,6 +20,8 @@ public class ReportController {
 
     @GetMapping
     public ResponseEntity<List<Report>> Report(){
+        System.console().printf("Report Controllerdeyim");
+
         return ResponseEntity.ok(reportService.makeReport());
     }
 }

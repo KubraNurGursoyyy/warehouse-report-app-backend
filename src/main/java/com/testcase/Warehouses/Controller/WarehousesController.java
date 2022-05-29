@@ -18,6 +18,9 @@ public class WarehousesController {
 
     @GetMapping
     public ResponseEntity<List<Warehouses>> Get(){
+
+        System.console().printf("Warehoosue Controllerdeyim");
+
         return ResponseEntity.ok(warehousesRepository.findAll());
     }
 

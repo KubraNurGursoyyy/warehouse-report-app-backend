@@ -17,6 +17,7 @@ public class ReportService {
     private final ProductsRepository productsRepository;
     private final WarehousesRepository warehousesRepository;
     public List<Report> makeReport(){
+        System.console().printf("Report Servicedeyim");
 
         final List<Report> reportList = new ArrayList<>();
 

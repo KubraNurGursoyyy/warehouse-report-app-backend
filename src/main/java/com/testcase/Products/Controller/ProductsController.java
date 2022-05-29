@@ -18,6 +18,8 @@ public class ProductsController {
 
     @GetMapping
     public ResponseEntity<List<Products>> Get(){
+        System.console().printf("Products Controllerdeyim");
+
         return ResponseEntity.ok(productsRepository.findAll());
     }
 
