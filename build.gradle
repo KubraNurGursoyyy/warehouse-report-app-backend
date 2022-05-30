@@ -3,21 +3,13 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
-task stage(type: Copy, dependsOn: [clean, build]) {
-	from jar.archivePath
-	into project.rootDir
-	rename {
-		'*.jar'
-	}
+jar {
+	enabled = false
 }
-stage.mustRunAfter(clean)
-
-clean << {
-	project.file('*.jar').delete()
-}
+/*
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
-
+*/
 group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
