@@ -17,7 +17,13 @@ clean {
 		project.file('*.jar').delete()
 	}
 }
+dependencies {
+	compileOnly 'org.springframework.security.experimental:spring-security-oauth2-authorization-server:0.1.0-SNAPSHOT'
+}
 
+repositories {
+	maven { url 'https://repo.spring.io/snapshot' }
+}
 group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
