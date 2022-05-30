@@ -3,6 +3,14 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
+bootJar {
+	archiveBaseName = 'testcase'
+	archiveVersion = '0.0.1'
+}
+jar {
+	archiveBaseName = 'app'
+	archiveVersion = '0.0.1'
+}
 
 group = 'com'
 version = '0.0.1-SNAPSHOT'
