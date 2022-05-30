@@ -7,13 +7,13 @@ task stage(type: Copy, dependsOn: [clean, build]) {
 	from jar.archivePath
 	into project.rootDir
 	rename {
-		'springboot.heroku.app-0.0.1-SNAPSHOT.jar'
+		'*.jar'
 	}
 }
 stage.mustRunAfter(clean)
 
 clean << {
-	project.file('springboot.heroku.app-0.0.1-SNAPSHOT.jar').delete()
+	project.file('*.jar').delete()
 }
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
