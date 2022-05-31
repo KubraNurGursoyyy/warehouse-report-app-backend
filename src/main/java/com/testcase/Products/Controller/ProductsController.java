@@ -22,6 +22,11 @@ public class ProductsController {
         return ResponseEntity.ok(productsRepository.findAll());
     }
 
+    @GetMapping("warehouse/{id}")
+    public ResponseEntity<List<Products>> GetByWarehouse(@PathVariable("id") Integer id){
+        return ResponseEntity.ok(productsRepository.findAllByWarehouseId(id));
+    }
+
     @PostMapping
     public ResponseEntity<Products> Create(@RequestBody Products products){
         return ResponseEntity.ok(productsRepository.save(products));
