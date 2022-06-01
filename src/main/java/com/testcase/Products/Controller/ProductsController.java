@@ -28,7 +28,7 @@ public class ProductsController {
 
     @GetMapping("product/{products}")
     public ResponseEntity<List<Products>> GetByLetters(@PathVariable("products") String products){
-        return ResponseEntity.ok(productsRepository.findAllByProductsContains(products));
+        return ResponseEntity.ok(productsRepository.findAllByProductsIsContaining(products));
     }
     @PostMapping
     public ResponseEntity<Products> Create(@RequestBody Products products){
