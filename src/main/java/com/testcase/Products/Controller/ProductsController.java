@@ -30,6 +30,26 @@ public class ProductsController {
     public ResponseEntity<List<Products>> GetByLetters(@PathVariable("products") String products){
         return ResponseEntity.ok(productsRepository.findProductsByProductsContains(products));
     }
+
+
+    @GetMapping("price/{requestedprice}/{start}/{end}")
+    public ResponseEntity<List<Products>> GetByBetweenPrice(@PathVariable("requestedprice") Integer requestedprice,@PathVariable("start") double start,@PathVariable("end") double end){
+        if(requestedprice == 1)
+            return ResponseEntity.ok(productsRepository.findAllByPurchasePriceBetween(start, end));
+        else if(requestedprice == 2)
+            return ResponseEntity.ok(productsRepository.findAllByPurchasePriceWithVatBetween(start,end));
+        else if(requestedprice == 3)
+            return ResponseEntity.ok(productsRepository.findAllBySalePriceBetween(start,end));
+        else
+            return ResponseEntity.ok(productsRepository.findAllBySalePriceWithVatBetween(start,end));
+
+                /*
+        private double purchasePrice;
+        private double purchasePriceWithVat;
+        private double salePrice;
+        private double salePriceWithVat*/
+    }
+
     @PostMapping
     public ResponseEntity<Products> Create(@RequestBody Products products){
         return ResponseEntity.ok(productsRepository.save(products));
