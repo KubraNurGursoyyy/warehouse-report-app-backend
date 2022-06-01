@@ -18,13 +18,17 @@ public class ProductsController {
 
     @GetMapping
     public ResponseEntity<List<Products>> Get(){
-
         return ResponseEntity.ok(productsRepository.findAll());
     }
 
     @GetMapping("warehouse/{id}")
     public ResponseEntity<List<Products>> GetByWarehouse(@PathVariable("id") Integer id){
         return ResponseEntity.ok(productsRepository.findAllByWarehouseId(id));
+    }
+
+    @GetMapping("names/{products}")
+    public ResponseEntity<List<Products>> GetByLetters(@PathVariable("products") String letters){
+        return ResponseEntity.ok(productsRepository.findAllByProductsIsContaining(letters));
     }
 
     @PostMapping
