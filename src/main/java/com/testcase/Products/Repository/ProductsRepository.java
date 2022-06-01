@@ -9,7 +9,8 @@ import java.util.List;
 @Repository
 public interface ProductsRepository extends JpaRepository<Products,Integer> {
     List<Products> findAllByWarehouseId(Integer id);
-    List<Products> findProductsByProductsContains(String products);
+
+    List<Products> findAllByProductsContains(String name);
 
     List<Products> findAllByPurchasePriceBetween(double start,double end);
     List<Products> findAllByPurchasePriceWithVatBetween(double start,double end);

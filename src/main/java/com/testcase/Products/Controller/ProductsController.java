@@ -26,11 +26,11 @@ public class ProductsController {
         return ResponseEntity.ok(productsRepository.findAllByWarehouseId(id));
     }
 
-    @GetMapping("product/{products}")
-    public ResponseEntity<List<Products>> GetByLetters(@PathVariable("products") String products){
-        return ResponseEntity.ok(productsRepository.findProductsByProductsContains(products));
-    }
 
+    @GetMapping("name/{name}")
+    public ResponseEntity<List<Products>> GetByWarehouse(@PathVariable("name") String name){
+        return ResponseEntity.ok(productsRepository.findAllByProductsContains(name));
+    }
 
     @GetMapping("price/{requestedprice}/{start}/{end}")
     public ResponseEntity<List<Products>> GetByBetweenPrice(@PathVariable("requestedprice") Integer requestedprice,@PathVariable("start") double start,@PathVariable("end") double end){
