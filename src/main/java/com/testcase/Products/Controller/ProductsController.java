@@ -1,6 +1,7 @@
 package com.testcase.Products.Controller;
 
 import com.testcase.Products.Entity.Products;
+import com.testcase.Products.ProductsDTO;
 import com.testcase.Products.Repository.ProductsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class ProductsController {
 
 
     @GetMapping("name/{name}")
-    public ResponseEntity<List<Products>> GetByName(@PathVariable("name") String name){
+    public ResponseEntity<List<ProductsDTO>> GetByName(@PathVariable("name") String name){
         return ResponseEntity.ok(productsRepository.findAllProductsByName(name));
     }
 
