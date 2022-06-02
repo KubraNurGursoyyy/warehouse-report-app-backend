@@ -11,8 +11,9 @@ import java.util.List;
 @Repository
 public interface ProductsRepository extends JpaRepository<Products,Integer> {
     List<Products> findAllByWarehouseId(Integer id);
+//    @Query(value="select p.products, p.quantity, p.purchase_price , p.sale_price , p.purchase_price_with_vat , p.sale_price_with_vat from  Products p where  p.products LIKE '% ?#{#name.toLowerCase()}%' OR p.products LIKE'% ?#{#name.toUpperCase()}%'")
 
-    @Query(value="select * from  products p where  p.products LIKE '% ?#{#name.toLowerCase()}%' OR p.products LIKE'% ?#{#name.toUpperCase()}%'", nativeQuery = true)
+    @Query(value="select p.products, p.quantity, p.purchasePrice , p.salePrice , p.purchasePriceWithVat , p.salePriceWithVat, p.warehouseId from  Products p where  p.products LIKE '% ?#{#name.toLowerCase()}%' OR p.products LIKE'% ?#{#name.toUpperCase()}%'")
     List<Products> findAllProductsByName(@Param("name") String name);
 
     List<Products> findAllByPurchasePriceBetween(double start,double end);
