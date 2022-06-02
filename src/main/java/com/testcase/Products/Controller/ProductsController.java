@@ -30,6 +30,7 @@ public class ProductsController {
 
     @GetMapping("name/{name}")
     public ResponseEntity<List<ProductsDTO>> GetByName(@PathVariable("name") String name){
+        System.console().printf("NAme:", name);
         return ResponseEntity.ok(productsRepository.findAllProductsByName(name));
     }
 
