@@ -42,12 +42,6 @@ public class ProductsController {
             return ResponseEntity.ok(productsRepository.findAllBySalePriceBetween(start,end));
         else
             return ResponseEntity.ok(productsRepository.findAllBySalePriceWithVatBetween(start,end));
-
-                /*
-        private double purchasePrice;
-        private double purchasePriceWithVat;
-        private double salePrice;
-        private double salePriceWithVat*/
     }
 
     @PostMapping
